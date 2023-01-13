@@ -1,0 +1,4 @@
+ANOTATION FOR PROJECT LIB.
+
+Instalar a a libe bara leitura de logs.
+yarn add winston @types/winston -D

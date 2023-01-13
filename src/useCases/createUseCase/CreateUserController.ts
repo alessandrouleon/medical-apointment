@@ -1,8 +1,11 @@
 import { Request, Response } from "express";
+import { logger } from "../../../logger";
 import { CreateUsersUseCase } from "./CreateUsersUseCase";
+import AppError from "../../errors/AppError";
 
 class CreateUserController {
     async handle(request: Request, response: Response) {
+      logger.info("Usuario sendo criado");
        try {
         const data = request.body;
         const userUseCase = new CreateUsersUseCase();
@@ -11,7 +14,8 @@ class CreateUserController {
         return response.json(result);
 
        }catch (err: any) {
-          return response.json(err.message);
+         logger.error(err.stack);
+          return response.status(err.statusCode).json(err.message);
        }
     }
 }
