@@ -2,6 +2,7 @@ import { User } from "../../entities/User";
 import AppError from "../../../../errors/AppError";
 import { IUsersRepository } from "../../repositories/users.repository";
 import CustomErro from "../../../../errors/CustomError";
+import { IPasswordCrypton } from "../../../../infra/shared/crypton/password.crypton";
 
 type UserRequest = {
     name: string;
@@ -11,7 +12,10 @@ type UserRequest = {
 
 class CreateUsersUseCase {
 
-    constructor(private userRepository: IUsersRepository){ }
+    constructor(
+        private userRepository: IUsersRepository,
+        private passwordCrypton: IPasswordCrypton
+        ){ }
 
     public async execute(data: UserRequest) {
         
@@ -26,7 +30,9 @@ class CreateUsersUseCase {
         if (existUser) {
             throw new CustomErro(`This username alread exists!`, 400);
         }
-
+        
+        const passwordHash = await this.passwordCrypton.hash(data.password);
+        user.password = passwordHash;
         const userCreate = await this.userRepository.save(user);
         return userCreate;
     }
