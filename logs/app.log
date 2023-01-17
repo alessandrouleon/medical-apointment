@@ -18,3 +18,9 @@
 {"level":"info","message":"Usuario sendo criado","timestamp":"12/01/2023 20:37:19"}
 {"level":"info","message":"Usuario sendo criado","timestamp":"12/01/2023 20:37:20"}
 {"level":"error","message":"AppError: This username alread exists!\n    at CreateUsersUseCase.<anonymous> (/home/icts/Documentos/www/medical_appointment/src/useCases/createUseCase/CreateUsersUseCase.ts:24:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (/home/icts/Documentos/www/medical_appointment/src/useCases/createUseCase/CreateUsersUseCase.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","timestamp":"12/01/2023 20:37:20"}
+{"level":"info","message":"Usuario sendo criado","timestamp":"16/01/2023 22:12:38"}
+{"level":"info","message":"Usuario sendo criado","timestamp":"16/01/2023 22:16:57"}
+{"level":"info","message":"Usuario sendo criado","timestamp":"16/01/2023 22:55:18"}
+{"level":"error","message":"This username alread exists!\n    at CreateUsersUseCase.<anonymous> (/home/icts/Documentos/www/medical_appointment/src/modules/users/useCases/createUseCase/CreateUsersUseCase.ts:27:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (/home/icts/Documentos/www/medical_appointment/src/modules/users/useCases/createUseCase/CreateUsersUseCase.ts:5:58)","timestamp":"16/01/2023 22:55:18"}
+{"level":"info","message":"Usuario sendo criado","timestamp":"16/01/2023 22:57:34"}
+{"level":"error","message":"This username alread exists!\n    at CreateUsersUseCase.<anonymous> (/home/icts/Documentos/www/medical_appointment/src/modules/users/useCases/createUseCase/CreateUsersUseCase.ts:27:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (/home/icts/Documentos/www/medical_appointment/src/modules/users/useCases/createUseCase/CreateUsersUseCase.ts:5:58)","timestamp":"16/01/2023 22:57:34"}

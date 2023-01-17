@@ -1,4 +1,15 @@
-ANOTATION FOR PROJECT LIB.
+# ANOTATION FOR PROJECT LIB.
 
-Instalar a a libe bara leitura de logs.
-yarn add winston @types/winston -D
+# Instalar a a libe bara leitura de logs.
+# yarn add winston
+
+# Instalar o ORM prisma
+
+# Instapar criar imagem postgres no docker
+# docker run --name medical_apointment -p 5432:5432 -e POSTGRES_PASSWORD=admin -e POSTGRES_USER=admin -d -t postgres
+
+# iniciando nigration
+# npx prisma migrate dev
+
+# instalar o dotenv
+# npm i dotenv

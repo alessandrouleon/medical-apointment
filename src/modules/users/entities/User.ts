@@ -7,7 +7,7 @@ type IUser = {
     password: string;
 }
 
-class UserEntity {
+class User {
     name: string;
     username: string;
     password: string;
@@ -25,10 +25,10 @@ class UserEntity {
     }
 
     static create(props: IUser){
-      const user = new UserEntity(props);
+      const user = new User(props);
       return user;
     }
 }
 
 
-export { UserEntity }
+export { User }
