@@ -25,6 +25,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "prisma": "^4.8.1"
+    "prisma": "^4.8.1",
+    "swagger-ui-express": "^4.6.0"
   }
 }
