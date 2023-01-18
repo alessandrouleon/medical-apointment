@@ -3,6 +3,7 @@ import 'dotenv/config';
 import express from 'express';
 
 import { userRouter } from './routes/users.routes';
+import { specialityRouter } from './routes/speciality.routes';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 const port = 3333;
 
 app.use('/user', userRouter);
+app.use('/speciality', specialityRouter);
 
 
 
