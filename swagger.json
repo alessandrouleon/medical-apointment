@@ -1,0 +1,8 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Serviço de agendamento de consulta",
+        "description": "API responsavel pelo agendamento de consulta",
+        "vesion": "1"
+    }
+}
