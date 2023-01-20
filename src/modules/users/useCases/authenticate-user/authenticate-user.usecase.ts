@@ -1,6 +1,7 @@
 import AppErros from "../../../../errors/AppError";
 import CustomErro from "../../../../errors/CustomError";
 import { IPasswordCrypton } from "../../../../infra/shared/crypton/password.crypton";
+import { IToken } from "../../../../infra/shared/token/IToken";
 import { IUsersRepository } from "../../repositories/users.repository";
 
 type AuthenticateRequest = {
@@ -12,11 +13,12 @@ export class AuthenticateUserUseCase {
 
     constructor(
         private userRepository: IUsersRepository,
-        private passwordCrypton: IPasswordCrypton
+        private passwordCrypton: IPasswordCrypton,
+        private token: IToken
     ) { }
 
-    async execute( data: AuthenticateRequest) {
-       
+    async execute(data: AuthenticateRequest) {
+
         if (!data.username || !data.password) {
             throw new CustomErro("Username/password iconrrect!");
         }
@@ -33,7 +35,9 @@ export class AuthenticateUserUseCase {
             throw new AppErros("Username/password iconrrect!", 401);
         }
 
-        return user;
+        const tokenGenerated = this.token.create(user);
+
+        return tokenGenerated;
 
     }
 }
