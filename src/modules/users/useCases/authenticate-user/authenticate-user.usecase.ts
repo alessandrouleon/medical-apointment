@@ -20,19 +20,19 @@ export class AuthenticateUserUseCase {
     async execute(data: AuthenticateRequest) {
 
         if (!data.username || !data.password) {
-            throw new CustomErro("Username/password iconrrect!");
+            throw new CustomErro("Username/password inconrrect!");
         }
 
         const user = await this.userRepository.findByUsername(data.username);
 
         if (!user) {
-            throw new AppErros("Username/password iconrrect!", 401);
+            throw new AppErros("Username/password inconrrect!", 401);
         }
 
         const comparePasswordIsEquals = await this.passwordCrypton.compare(data.password, user.password);
 
         if (!comparePasswordIsEquals) {
-            throw new AppErros("Username/password iconrrect!", 401);
+            throw new AppErros("Username/password inconrrect!", 401);
         }
 
         const tokenGenerated = this.token.create(user);

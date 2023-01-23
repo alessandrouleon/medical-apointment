@@ -8,8 +8,8 @@ export class PasswordBcrypt implements IPasswordCrypton {
         return await bcrypt.hash(password, 10);
     }
 
-   async compare(password: string, passwordHash: string): Promise<boolean> {
-       return bcrypt.compare(password, passwordHash);
+    public async compare(password: string, passwordHash: string): Promise<boolean> {
+        return bcrypt.compare(password, passwordHash);
     }
 
 }
