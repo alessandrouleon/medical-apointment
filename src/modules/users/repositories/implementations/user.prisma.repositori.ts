@@ -23,4 +23,10 @@ export class UserPrismaRepository implements IUsersRepository {
         return user
     }
 
+    public async findById(id: string): Promise<User | null> {
+        return await prismaClient.user.findUnique({
+            where: { id }
+        });
+    }
+
 }

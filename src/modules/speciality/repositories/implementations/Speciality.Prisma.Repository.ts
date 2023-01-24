@@ -5,7 +5,7 @@ import { ISpecialityRepository } from "../ISpecialityRepositories";
 
 export class SpecialityPrismaRepository implements ISpecialityRepository {
 
-    async save(data: Speciality): Promise<Speciality> {
+    public async save(data: Speciality): Promise<Speciality> {
         const speciality = await prismaClient.speciality.create({
             data: {
                 id: data.id,
@@ -14,6 +14,12 @@ export class SpecialityPrismaRepository implements ISpecialityRepository {
             } as any
         });
         return speciality;
+    }
+
+    public async findByName(name: string): Promise<Speciality | null> {
+        return await prismaClient.speciality.findUnique({
+            where: { name }
+        });
     }
 
 }

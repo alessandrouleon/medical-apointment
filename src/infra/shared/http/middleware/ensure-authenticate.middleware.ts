@@ -22,6 +22,7 @@ export const ensureAuthenticate = (request: Request, response: Response, next: N
     const verifyToken = new JWTToken().validate(token);
 
     if (verifyToken) {
+        request.userId = verifyToken.sub;
         return next();
     }
 

@@ -1,5 +1,5 @@
 import { User } from "../../../modules/users/entities/User";
-import { IToken } from "./IToken";
+import { IToken, TokenUser } from "./IToken";
 import { sign, verify } from 'jsonwebtoken';
 import { createHmac } from 'crypto';
 
@@ -22,12 +22,11 @@ export class JWTToken implements IToken {
         return token;
     }
 
-    public validate(token: string): boolean {
+    public validate(token: string): TokenUser | null {
         try {
-            verify(token, this.TOKEN_SECRET_CRYPTON);
-            return true;
+            return verify(token, this.TOKEN_SECRET_CRYPTON) as TokenUser;
         } catch (err) {
-            return false;
+            return null;
         }
     }
 

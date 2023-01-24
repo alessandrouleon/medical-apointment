@@ -14,11 +14,11 @@
 ---
 
 ### **Cadastro de Especialidades**
-- [] Deve ser possivel o usuário cadastrar uma especialidades.
-  - [] O usuário deve está autenticado no sistema.
-  - [] Não e permitido o cadstro de especialidade com o mesmo nome.
-  - [] O usuário deve ter permissão de administrador.
-  - [] Não e permitido cadastro com nome vazio.
+- [X] Deve ser possivel o usuário cadastrar uma especialidades.
+  - [X] O usuário deve está autenticado no sistema.
+  - [X] Não e permitido o cadastro de especialidade com o mesmo nome.
+  - [X] O usuário deve ter permissão de administrador.
+  - [X] Não e permitido cadastro com nome vazio.
 
 ---
 
