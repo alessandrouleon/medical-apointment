@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import CustomErro from "../../../../errors/CustomError";
 import { JWTToken } from "../../token/JWTToken";
 
 
