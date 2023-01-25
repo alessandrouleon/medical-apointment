@@ -13,3 +13,8 @@
 
 # instalar o dotenv
 # npm i dotenv
+
+#instalar o vitest
+
+# Rodar teste coverage
+# yarn test:coverage
