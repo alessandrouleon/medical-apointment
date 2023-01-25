@@ -15,5 +15,4 @@ export class DoctorMemoryRepository implements IDoctorRepository {
         return this.items.find((doctor) => doctor.crm === crm) || null;
     }
 
-
 }

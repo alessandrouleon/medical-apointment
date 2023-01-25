@@ -61,7 +61,7 @@ describe('Create Doctor Use Case', () => {
     });
    
 
-    test('Should not be able to create a new doctor with exists crm length incorrect', async () => {
+    test('Should not be able to create a new doctor with exists crm length incorrect.', async () => {
 
         const doctorMoch: CreateDoctorRequest = {
             name: 'name_test',
@@ -83,6 +83,5 @@ describe('Create Doctor Use Case', () => {
        }).rejects.toThrowError("This username alread exists!");
     });
 
-
-
+   
 });
