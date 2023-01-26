@@ -1,6 +1,7 @@
 
 import { randomUUID } from 'crypto';
 import AppErros from '../../../errors/AppError';
+import { PasswordBcrypt } from '../../../infra/shared/crypton/password.bcrypt';
 
 type IUser = {
     name: string;
@@ -30,7 +31,14 @@ class User {
         this.created_at = new Date;
     }
 
-    static create(props: IUser) {
+    static async create(props: IUser) {
+        if (!props.password) {
+            throw new AppErros(`This username or password is required.`, 404);
+        }
+        const bcrypt = new PasswordBcrypt();
+        const passwordHash = await bcrypt.hash(props.password);
+
+        props.password = passwordHash;
         const user = new User(props);
         return user;
     }

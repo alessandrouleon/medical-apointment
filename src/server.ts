@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-const port = 3333;
+const port = 3334;
 
 
 app.use('/docs-api', swaggerUI.serve, swaggerUI.setup(swaggerDocument));

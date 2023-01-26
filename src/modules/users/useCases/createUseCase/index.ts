@@ -4,7 +4,6 @@ import { CreateUserController } from "./CreateUserController";
 
 
 const userPrismaRepository = new UserPrismaRepository();
-const passwordCrypton = new PasswordBcrypt();
-const createUserController = new CreateUserController(userPrismaRepository, passwordCrypton);
+const createUserController = new CreateUserController(userPrismaRepository);
 
 export { createUserController }

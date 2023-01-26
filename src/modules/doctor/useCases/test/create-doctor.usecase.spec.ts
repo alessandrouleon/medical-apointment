@@ -1,6 +1,5 @@
 
 import { test, expect, describe , beforeAll} from "vitest";
-import { randomUUID } from 'crypto';
 import { CreateDoctorRequest, CreateDoctorUseCase } from "../create-doctor/create-doctor.usecase";
 import { UsersMemoryRepository } from "../../../users/repositories/implementations/users.memory.repository";
 import { DoctorMemoryRepository } from "../../repositories/implementations/doctor.memory.repository";
