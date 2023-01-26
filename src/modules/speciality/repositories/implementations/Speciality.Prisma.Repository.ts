@@ -22,4 +22,10 @@ export class SpecialityPrismaRepository implements ISpecialityRepository {
         });
     }
 
+    public async findById(id: string): Promise<Speciality | null> {
+        return prismaClient.speciality.findUnique({
+            where: { id }
+        });
+    }
+
 }

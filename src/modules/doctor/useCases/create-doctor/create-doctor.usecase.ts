@@ -1,4 +1,5 @@
 import CustomErro from "../../../../errors/CustomError";
+import { ISpecialityRepository } from "../../../speciality/repositories/ISpecialityRepositories";
 import { User } from "../../../users/entities/User";
 import { IUsersRepository } from "../../../users/repositories/users.repository";
 import { Doctor } from "../../entities/doctor.entities";
@@ -17,7 +18,8 @@ export class CreateDoctorUseCase {
 
     public constructor(
         private userRepository: IUsersRepository,
-        private doctorRepository: IDoctorRepository
+        private doctorRepository: IDoctorRepository,
+        private specialityRepository: ISpecialityRepository
     ) { }
 
     public async execute(data: CreateDoctorRequest) {
@@ -27,6 +29,12 @@ export class CreateDoctorUseCase {
             username: data.username,
             password: data.password
         });
+
+        const speciality = await this.specialityRepository.findById(data.specialityId);
+
+        if (!speciality) {
+            throw new CustomErro("Speciality does not exists!");
+        }
 
         const existUser = await this.userRepository.findByUsername(data.username);
 
@@ -45,8 +53,8 @@ export class CreateDoctorUseCase {
 
         const crmExists = await this.doctorRepository.findByCRM(data.crm);
 
-        if(crmExists){
-           throw new CustomErro("THis CRM exists!", 404);
+        if (crmExists) {
+            throw new CustomErro("THis CRM exists!", 404);
         }
 
         const doctorCreated = await this.doctorRepository.save(doctor);
