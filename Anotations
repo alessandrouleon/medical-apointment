@@ -10,6 +10,7 @@
 
 # iniciando nigration
 # npx prisma migrate dev
+# npx prisma generate
 
 # instalar o dotenv
 # npm i dotenv

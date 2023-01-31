@@ -1,11 +1,11 @@
 
 import { test, expect, describe , beforeAll} from "vitest";
-import { CreateDoctorRequest, CreateDoctorUseCase } from "../create-doctor/create-doctor.usecase";
-import { UsersMemoryRepository } from "../../../users/repositories/implementations/users.memory.repository";
-import { DoctorMemoryRepository } from "../../repositories/implementations/doctor.memory.repository";
-import { SpecialityMemoryRepository } from "../../../speciality/repositories/implementations/speciality.memory.repository";
-import { Speciality } from "../../../speciality/entities/Speciality";
-import { ISpecialityRepository } from "../../../speciality/repositories/ISpecialityRepositories";
+import { CreateDoctorRequest, CreateDoctorUseCase } from "../../create-doctor/create-doctor.usecase";
+import { UsersMemoryRepository } from "../../../../users/repositories/implementations/users.memory.repository";
+import { DoctorMemoryRepository } from "../../../repositories/implementations/doctor.memory.repository";
+import { SpecialityMemoryRepository } from "../../../../speciality/repositories/implementations/speciality.memory.repository";
+import { Speciality } from "../../../../speciality/entities/Speciality";
+import { ISpecialityRepository } from "../../../../speciality/repositories/ISpecialityRepositories";
 
 let specialityRepository: ISpecialityRepository;
 let speciality: Speciality;
